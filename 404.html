@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Không tìm thấy trang | Bandishare</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Roboto,Arial,sans-serif;background:#f4f7fb;color:#172138;min-height:100vh;display:grid;place-items:center;padding:20px}.box{width:min(580px,100%);background:#fff;border:1px solid #e2e8f2;border-radius:24px;padding:42px;text-align:center;box-shadow:0 18px 55px rgba(30,43,75,.09)}.code{font-size:76px;line-height:1;font-weight:950;color:#5665dc}.box h1{font-size:26px;margin:14px 0 8px}.box p{color:#6f7c90;margin:0 0 24px}.actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:850;cursor:pointer;text-decoration:none}.primary{background:#5665dc;color:#fff}.secondary{background:#edf1ff;color:#4352c2}
+</style>
+</head>
+<body>
+<main class="box">
+<div class="code">404</div>
+<h1>Trang bạn mở không tồn tại</h1>
+<p>Đường dẫn có thể đã thay đổi. Hãy trở về trang chủ hoặc quay lại trang trước.</p>
+<div class="actions"><a class="btn primary" id="home-link" href="index.html">Về trang chủ</a><button class="btn secondary" onclick="history.back()">Quay lại</button></div>
+</main>
+<script>
+(function(){
+  var link=document.getElementById('home-link');
+  var parts=location.pathname.split('/').filter(Boolean);
+  if(location.hostname.endsWith('github.io') && parts.length){link.href='/' + parts[0] + '/index.html';}
+  else{link.href='/index.html';}
+})();
+</script>
+</body>
+</html>
